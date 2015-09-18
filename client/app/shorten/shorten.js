@@ -8,6 +8,10 @@ angular.module('shortly.shorten', [])
       .then( function ( resp ) {
         console.log("it's IN!");
         $scope.link = '';
+      })
+      .catch( function ( err ) {
+        console.log( 'scope stuff', $scope.link );
+        console.log('could nor add link ', err);
       });
     };
 });
