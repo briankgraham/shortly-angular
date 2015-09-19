@@ -5,10 +5,10 @@
     <button class="btn btn-primary" ng-disabled="theForm.$invalid" type='submit'>Press Me</button>
   </form>
   <div ng-hide="success" class='ng-hide' ng-hide='hasError'>
-    <iframe src="../../assets/success2.gif" width="480" height="361" frameBorder="0"></iframe></div>
+    <iframe src="../../assets/thumbsup.gif" width="480" height="361" frameBorder="0"></iframe></div>
   </div>
   <div class="message" ng-if="theForm.link.text.$error.required"><h2>URL required!</h2></div>
-  <div class="message" ng-show="theForm.link.text.$error&& theForm.$dirty"><h2>URL not correct!</h2></div>
+  <div class="message" ng-show="theForm.link.text.$error && theForm.$dirty"><h2>URL not correct!</h2></div>
   <div ng-hide='fail 'class='ng-hide'>
     <iframe src="../../assets/down.gif" width="480" height="361" frameBorder="0"></iframe></div>
   </div>

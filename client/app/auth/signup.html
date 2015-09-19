@@ -2,7 +2,7 @@
   <h1>signup</h1>
   <form name="signupForm" ng-submit='signup()'>
     <input class="form-control" placeholder="enter a new username" required type='text' ng-model='user.username'>
-    <input type="password" placeholder="enter a new password" ng-model='user.password'>
+    <input class="form-control"type="password" placeholder="enter a new password" ng-model='user.password'>
     <button ng-disabled="signupForm.$invalid" class="btn btn-primary">signup</button>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>

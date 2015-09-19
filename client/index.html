@@ -4,19 +4,21 @@
     <meta charset="utf-8" />
     <title>Shortly</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
   </head>
   <body>
     <h1>Shortly</h1>
-    <div class='navigation' ng-controller='AuthController'>
-    <ul>
-      <li><a href='#links'>All Links</a></li>
-      <li><a href='#shorten'>Shorten</a></li>
-      <li><a href='#signin'>Signin</a></li>
-      <li><a href='#signup'>Singup</a></li>
-      <li><a href='#logout' ng-click="signout()">Logout</a></li>
-    </ul>
-  </div>
+    <nav class='navbar navbar-inverse' ng-controller='AuthController'>
+    <div class="container-fluid">
+    
+      <a class="navbar-brand" href='#links'>All Links</a>
+      <a class="navbar-brand" href='#shorten'>Shorten</a>
+      <a class="navbar-brand" href='#signin'>Signin</a>
+      <a class="navbar-brand" href='#signup'>Singup</a>
+      <a class="navbar-brand" href='#logout' ng-click="signout()">Logout</a>
+    
+    </div>
+  </nav>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view>
@@ -33,3 +35,4 @@
     <script src="app/app.js"></script>
   </body>
 </html>
+

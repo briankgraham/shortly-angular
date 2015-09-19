@@ -14,6 +14,7 @@ angular.module('shortly.shorten', [])
      Links.addLink( $scope.link.text )
       .then( function ( resp ) {
         console.log("it's IN!");
+        //$location.path('/');
         $scope.link.text = '';
         $scope.success = false;
         $scope.fail = true;
