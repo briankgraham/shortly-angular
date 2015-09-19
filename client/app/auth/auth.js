@@ -5,6 +5,7 @@ angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
+  $scope.fail = true;
 
   $scope.signin = function () {
     Auth.signin($scope.user)
@@ -14,6 +15,8 @@ angular.module('shortly.auth', [])
       })
       .catch(function (error) {
         console.error(error);
+          $scope.fail = false;
+
       });
   };
 
