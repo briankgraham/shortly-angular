@@ -8,13 +8,13 @@ angular.module('shortly.links', [])
         console.log(resp);
       });
       $scope.data.links.push(link);
-    };
-    $scope.getLinks = function () {
-    Links.getLinks()
-      .then(function (resp) {
-        console.log(resp);
-        $scope.data.links = resp.data;
-      });
+  };
+  $scope.getLinks = function () {
+  Links.getLinks()
+    .then(function (resp) {
+      console.log(resp);
+      $scope.data.links = resp.data;
+    });
   };
   $scope.getLinks();
 });

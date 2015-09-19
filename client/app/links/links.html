@@ -1,9 +1,12 @@
-<div id='container'>
+<div class='container'>
   <div ng-controller="LinksController">
+  <input class="form-control" type='text' placeholder='filter' ng-model='search'/>
     <ul ng-model='data'>
-      <li class='link' ng-repeat="link in data.links">
+      <li class='link' ng-repeat="link in data.links | filter:search | orderBy:'title'">
+      <a href='{{link.base_url}}/api/links/{{link.code}}'>
         <span class='title'>{{link.title}}</span>
-        <a href='{{link.base_url}}/api/links/{{link.code}}'>{{link.url}}</a>
+      </a>
+        {{link.base_url}}/{{link.code}}
         <div class='visits'>
         Visits
         <span class='count'>{{link.visits}}</span>

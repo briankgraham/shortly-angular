@@ -1,16 +1,17 @@
-<div id='container'>
-<!-- <div ng-controller='ShortenController'> -->
-<form name="theForm"ng-submit='addLink()'>
-<input type="url" ng-model='link.text'/>
-<input ng-disable="theForm.$invalid" type='submit'/>
-<!-- <button>Press me baby</button> -->
-</form>
-<div ng-hide="success" class='ng-hide' ng-hide='hasError'>
-<iframe src="../../assets/success2.gif" width="480" height="361" frameBorder="0"></iframe></div>
-</div>
-<div ng-hide='fail 'class='ng-hide'>
-<iframe src="../../assets/down.gif" width="480" height="361" frameBorder="0"></iframe></div>
-</div>
+<div class='container'>
+
+  <form novalidate name="theForm"ng-submit='addLink()'>
+    <input type="url" class = "form-control" ng-class="{'error': theForm.$invalid && theForm.$dirty}" placeholder="enter a url to shorten" required ng-model='link.text'/>
+    <button class="btn btn-primary" ng-disabled="theForm.$invalid" type='submit'>Press Me</button>
+  </form>
+  <div ng-hide="success" class='ng-hide' ng-hide='hasError'>
+    <iframe src="../../assets/success2.gif" width="480" height="361" frameBorder="0"></iframe></div>
+  </div>
+  <div class="message" ng-if="theForm.link.text.$error.required"><h2>URL required!</h2></div>
+  <div class="message" ng-show="theForm.link.text.$error&& theForm.$dirty"><h2>URL not correct!</h2></div>
+  <div ng-hide='fail 'class='ng-hide'>
+    <iframe src="../../assets/down.gif" width="480" height="361" frameBorder="0"></iframe></div>
+  </div>
 </div>
 
 
