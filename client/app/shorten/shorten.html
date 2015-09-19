@@ -1,7 +1,15 @@
 <div id='container'>
 <!-- <div ng-controller='ShortenController'> -->
-<input ng-model='link'/>
-<button ng-click='addLink()'>Press me baby</button>
+<form name="theForm"ng-submit='addLink()'>
+<input type="url" ng-model='link.text'/>
+<input ng-disable="theForm.$invalid" type='submit'/>
+<!-- <button>Press me baby</button> -->
+</form>
+<div ng-hide="success" class='ng-hide' ng-hide='hasError'>
+<iframe src="../../assets/success2.gif" width="480" height="361" frameBorder="0"></iframe></div>
+</div>
+<div ng-hide='fail 'class='ng-hide' ng-hide='hasError'>
+<iframe src="../../assets/down.gif" width="480" height="361" frameBorder="0"></iframe></div>
 </div>
 </div>
 

@@ -12,7 +12,7 @@ angular.module('shortly.links', [])
     $scope.getLinks = function () {
     Links.getLinks()
       .then(function (resp) {
-        //fetch server
+        console.log(resp);
         $scope.data.links = resp.data;
       });
   };

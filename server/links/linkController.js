@@ -74,6 +74,7 @@ module.exports = {
 
   navToLink: function (req, res, next) {
     var link = req.navLink;
+    console.log('trying to redirect', link);
     link.visits++;
     link.save(function (err, savedLink) {
       if (err) {

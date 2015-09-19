@@ -1,17 +1,26 @@
 angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links) {
-  $scope.link = {};
+  $scope.link = {
+    text: ''
+  };
+
+  $scope.success = true;
+  $scope.fail = true;
+
   $scope.addLink = function () {
     // check url
-     Links.addLink( $scope.link )
+    $scope.hasError = false;
+     Links.addLink( $scope.link.text )
       .then( function ( resp ) {
         console.log("it's IN!");
-        $scope.link = '';
+        $scope.link.text = '';
+        $scope.success = false;
+        $scope.fail = true;
       })
       .catch( function ( err ) {
-        console.log( 'scope stuff', $scope.link );
-        console.log('could nor add link ', err);
+        $scope.fail = false;
+        $scope.success = true;
       });
     };
 });

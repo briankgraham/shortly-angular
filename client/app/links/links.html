@@ -1,5 +1,16 @@
 <div id='container'>
-  <div>
-    {{ data.links }}
+  <div ng-controller="LinksController">
+    <ul ng-model='data'>
+      <li class='link' ng-repeat="link in data.links">
+        <span class='title'>{{link.title}}</span>
+        <a href='{{link.base_url}}/api/links/{{link.code}}'>{{link.url}}</a>
+        <div class='visits'>
+        Visits
+        <span class='count'>{{link.visits}}</span>
+        </div>
+        <img src='../../assets/redirect_icon.png'
+        <span class='info'></span>
+      </li>
+    </ul>
   </div>
 </div>
